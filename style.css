@@ -431,7 +431,7 @@ label {
     --typography--body-regular: 1rem;
     --default-theme--heading-colour: var(--colours--white);
     --colours--white: #f6f6f6;
-    --misc-styles--border-radius: .5rem;
+    --misc-styles--border-radius: 6px;
     --colours--grey-dark: #232323;
     --typography--body-large: 1.25rem;
     --typography--body-large-mobile: 1.125rem;
@@ -543,8 +543,8 @@ a:hover {
 .avatar-wrapper {
     border-radius: var(--misc-styles--border-radius);
     background-color: var(--colours--grey-dark);
-    width: 4.2rem;
-    height: 4.2rem;
+    width: 8.2rem;
+    height: 8.2rem;
     position: relative;
     overflow: hidden
 }
@@ -553,7 +553,7 @@ a:hover {
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
     justify-content: flex-start;
-    align-items: flex-end;
+    align-items: flex-start;
     display: flex
 }
 
@@ -598,7 +598,7 @@ a:hover {
     background-color: var(--colours--grey-dark);
     justify-content: center;
     align-items: center;
-    padding: .6rem .75rem;
+    padding: .3rem .5rem;
     transition: opacity .4s;
     display: inline-flex
 }
@@ -714,7 +714,11 @@ a:hover {
 
 .logo-parent {
     width: 2.625rem;
-    height: 2.625rem
+    height: 2.625rem;
+}
+
+.logo-parent img {
+    border-radius: var(--misc-styles--border-radius);
 }
 
 .publications-layout {
@@ -806,6 +810,7 @@ a:hover {
 .button-group {
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
+    margin-top: 15px;
     display: flex
 }
 
