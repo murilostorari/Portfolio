@@ -17,15 +17,11 @@
         rel="shortcut icon" type="image/x-icon">
     <link href="https://cdn.prod.website-files.com/66fbe669fd0adccab7acf3f7/6701bb84f0e7dfd6e65789a5_web.png"
         rel="apple-touch-icon">
-    <style>
-        body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-    </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 </head>
 
-<body data-w-id="66fbe669fd0adccab7acf40a">
+<body>
     <div class="page-wrapper">
         <main class="page-main">
             <header class="header">
@@ -41,28 +37,32 @@
                                 <div class="font-size-large">Desenvolvedor Fullstack .NET</div>
 
                                 <div class="button-group">
-                                    <a href="https://www.linkedin.com/in/murilostorari/" target="_blank"
-                                        class="button is-secondary w-inline-block">
-                                        <div class="button_icon w-embed">
-                                            <svg xmlns="http://www.w3.org/2000/svg" height="17" width="15.25"
-                                                viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                                <path fill="#ffffff"
-                                                    d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
-                                            </svg>
-                                        </div>
-                                        <div class="button_text">LinkedIn</div>
+                                    <a href="https://www.linkedin.com/in/murilostorari/" target="_blank">
+                                        <button class="icon-button">
+                                            <div class="button_icon w-embed">
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="17" width="15.25"
+                                                    viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                                    <path fill="#ffffff"
+                                                        d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z" />
+                                                </svg>
+                                            </div>
+
+                                            LinkedIn
+                                        </button>
                                     </a>
 
-                                    <a href="https://github.com/murilostorari" target="_blank"
-                                        class="button is-secondary w-inline-block">
-                                        <div class="button_icon w-embed">
-                                            <svg xmlns="http://www.w3.org/2000/svg" height="17" width="16.5625"
-                                                viewBox="0 0 496 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                                                <path fill="#ffffff"
-                                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
-                                            </svg>
-                                        </div>
-                                        <div class="button_text">Github</div>
+                                    <a href="https://github.com/murilostorari" target="_blank">
+                                        <button class="icon-button">
+                                            <div class="button_icon w-embed">
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="17" width="16.5625"
+                                                    viewBox="0 0 496 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                                    <path fill="#ffffff"
+                                                        d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z" />
+                                                </svg>
+                                            </div>
+
+                                            Github
+                                        </button>
                                     </a>
                                 </div>
                             </div>
@@ -127,11 +127,11 @@
 
             <section class="section" id="skills">
                 <div class="container">
-                    <!-- Cabeçalho da seção -->
                     <div class="section-heading">
                         <div class="vertical-flex is-heading">
                             <h2>Ferramentas e Tecnologias</h2>
-                            <div>Aqui estão algumas das principais ferramentas e tecnologias com as quais trabalho</div>
+                            <div>Conheça as ferramentas e tecnologias que uso no desenvolvimento dos meus projetos.
+                            </div>
                         </div>
                     </div>
 
@@ -271,6 +271,16 @@
                         </div>
                         <div class="grid-cell tool" style="display: none;">
                             <div class="logo-text-wrapper">
+                                <div class="logo-parent"><img src="images/icons/firebase.png" loading="lazy" alt="">
+                                </div>
+                                <div class="vertical-flex is-small">
+                                    <h5>Firebase</h5>
+                                    <div>Plataforma para apps</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-cell tool" style="display: none;">
+                            <div class="logo-text-wrapper">
                                 <div class="logo-parent"><img src="images/icons/git.png" loading="lazy" alt="">
                                 </div>
                                 <div class="vertical-flex is-small">
@@ -285,7 +295,7 @@
                                 </div>
                                 <div class="vertical-flex is-small">
                                     <h5>Photoshop</h5>
-                                    <div>Software de edição</div>
+                                    <div>Edição de imagens</div>
                                 </div>
                             </div>
                         </div>
@@ -307,88 +317,129 @@
                             <div>2023-2024</div>
                         </div>
                     </div>
-                    <div class="projects-layout">
-                        <div class="project-card">
-                            <div class="project-card_image-wrap">
-                                <img src="images/projects/Artiqmind.png" loading="lazy" alt="" class="img-cover">
-
-                                <div class="link-buttons">
-                                    <a href="https://artiqmind.web.app/" target="_blank" class="link-label">
-                                        <div class="button_icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12"
-                                                viewBox="0 0 512 512">
-                                                <path fill="#a4a4a6"
-                                                    d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6l0-128c0-17.7-14.3-32-32-32L352 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z" />
-                                            </svg>
+                    <!-- Estrutura do Swiper -->
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slide 1 -->
+                            <div class="swiper-slide">
+                                <div class="project-card">
+                                    <div class="project-card_image-wrap">
+                                        <img src="images/projects/Artiqmind.png" loading="lazy" alt=""
+                                            class="img-cover">
+                                        <div class="link-buttons">
+                                            <a href="https://artiqmind.web.app/" target="_blank"
+                                                class="link-label">Live</a>
+                                            <a href="https://github.com/murilostorari/artiqmind" target="_blank"
+                                                class="link-label">Repositório</a>
                                         </div>
-                                        Live
-                                    </a>
-
-                                    <a href="https://github.com/murilostorari/artiqmind" target="_blank"
-                                        class="link-label">
-                                        <div class="button_icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12"
-                                                viewBox="0 0 512 512">
-                                                <path fill="#a4a4a6"
-                                                    d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6l0-128c0-17.7-14.3-32-32-32L352 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z" />
-                                            </svg>
+                                    </div>
+                                    <div class="project-card_header">
+                                        <div class="project-card_title">
+                                            <h4>Artiqmind</h4>
                                         </div>
-                                        Repositório
-                                    </a>
+                                        <div class="card-buttons">
+                                            <div class="card-label card-label-html">HTML</div>
+                                            <div class="card-label card-label-css">CSS</div>
+                                            <div class="card-label card-label-js">JavaScript</div>
+                                            <div class="card-label card-label-firebase">Firebase</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-card_description">
+                                        <div>Uma landing page criada para um site de e-books, no qual foi utilizado
+                                            firebase para hospedar o site.</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="project-card_header">
-                                <div class="project-card_title">
-                                    <h4>Artiqmind</h4>
-                                </div>
-                                <div class="card-buttons">
-                                    <div class="card-label">HTML</div>
-                                    <div class="card-label">CSS</div>
-                                    <div class="card-label">JavaScript</div>
-                                    <div class="card-label">Firebase</div>
+                            <!-- Slide 2 -->
+                            <div class="swiper-slide">
+                                <div class="project-card">
+                                    <div class="project-card_image-wrap">
+                                        <img src="images/projects/Oficina.png" loading="lazy" alt="" class="img-cover">
+                                        <div class="link-buttons">
+                                            <a href="https://github.com/murilostorari/Sistema-de-gerenciamento-de-oficina"
+                                                target="_blank" class="link-label">Repositório</a>
+                                        </div>
+                                    </div>
+                                    <div class="project-card_header">
+                                        <div class="project-card_title">
+                                            <h4>Sistema de gerenciamento de oficina</h4>
+                                        </div>
+                                        <div class="card-buttons">
+                                            <div class="card-label card-label-csharp">C#</div>
+                                            <div class="card-label card-label-access">Access</div>
+                                            <div class="card-label card-label-wforms">Windows Forms</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-card_description">
+                                        <div>Um sistema para gerenciamento de uma oficina mecânica, criado como meu TCC
+                                            do ensino médio.</div>
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="project-card_description">
-                                <div>Uma landing page criada para um site de e-books, no qual foi utilizado firebase
-                                    para hospedar o site.</div>
+                            <div class="swiper-slide">
+                                <div class="project-card">
+                                    <div class="project-card_image-wrap">
+                                        <img src="images/projects/Artiqmind.png" loading="lazy" alt=""
+                                            class="img-cover">
+                                        <div class="link-buttons">
+                                            <a href="https://artiqmind.web.app/" target="_blank"
+                                                class="link-label">Live</a>
+                                            <a href="https://github.com/murilostorari/artiqmind" target="_blank"
+                                                class="link-label">Repositório</a>
+                                        </div>
+                                    </div>
+                                    <div class="project-card_header">
+                                        <div class="project-card_title">
+                                            <h4>Artiqmind</h4>
+                                        </div>
+                                        <div class="card-buttons">
+                                            <div class="card-label card-label-html">HTML</div>
+                                            <div class="card-label card-label-css">CSS</div>
+                                            <div class="card-label card-label-js">JavaScript</div>
+                                            <div class="card-label card-label-firebase">Firebase</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-card_description">
+                                        <div>Uma landing page criada para um site de e-books, no qual foi utilizado
+                                            firebase para hospedar o site.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="project-card">
+                                    <div class="project-card_image-wrap">
+                                        <img src="images/projects/Artiqmind.png" loading="lazy" alt=""
+                                            class="img-cover">
+                                        <div class="link-buttons">
+                                            <a href="https://artiqmind.web.app/" target="_blank"
+                                                class="link-label">Live</a>
+                                            <a href="https://github.com/murilostorari/artiqmind" target="_blank"
+                                                class="link-label">Repositório</a>
+                                        </div>
+                                    </div>
+                                    <div class="project-card_header">
+                                        <div class="project-card_title">
+                                            <h4>Artiqmind</h4>
+                                        </div>
+                                        <div class="card-buttons">
+                                            <div class="card-label card-label-html">HTML</div>
+                                            <div class="card-label card-label-css">CSS</div>
+                                            <div class="card-label card-label-js">JavaScript</div>
+                                            <div class="card-label card-label-firebase">Firebase</div>
+                                        </div>
+                                    </div>
+                                    <div class="project-card_description">
+                                        <div>Uma landing page criada para um site de e-books, no qual foi utilizado
+                                            firebase para hospedar o site.</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
-                        <div class="project-card">
-                            <div class="project-card_image-wrap">
-                                <img src="images/projects/Oficina.png" loading="lazy" alt="" class="img-cover">
-
-                                <div class="link-buttons">
-                                    <a href="https://github.com/murilostorari/Sistema-de-gerenciamento-de-oficina"
-                                        target="_blank" class="link-label">
-                                        <div class="button_icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12"
-                                                viewBox="0 0 512 512">
-                                                <path fill="#a4a4a6"
-                                                    d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6l0-128c0-17.7-14.3-32-32-32L352 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z" />
-                                            </svg>
-                                        </div>
-                                        Repositório
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="project-card_header">
-                                <div class="project-card_title">
-                                    <h4>Sistema de gerenciamento de oficina</h4>
-                                </div>
-                                <div class="card-buttons">
-                                    <div class="card-label">C#</div>
-                                    <div class="card-label">Access</div>
-                                    <div class="card-label">Windows Forms</div>
-                                </div>
-                            </div>
-
-                            <div class="project-card_description">
-                                <div>Um sistema para gerenciamento de uma oficina mecânica, criado como meu TCC do
-                                    ensino médio.</div>
-                            </div>
-                        </div>
+                        <!-- Adicionando botões de navegação -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <!-- Indicadores -->
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </section>
@@ -540,13 +591,19 @@
                         </div>
                     </div>
                     <form class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Nome</label>
-                            <input type="text" id="name" name="name" required placeholder="Seu nome">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nome</label>
+                                <input type="text" id="name" name="name" required placeholder="Seu nome">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" required placeholder="Seu e-mail">
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="email" id="email" name="email" required placeholder="Seu e-mail">
+                            <label for="subject">Assunto</label>
+                            <input type="text" id="subject" name="subject" required placeholder="Assunto">
                         </div>
                         <div class="form-group">
                             <label for="message">Mensagem</label>
@@ -579,7 +636,10 @@
             </section>
         </main>
     </div>
-    <script src="script.js"></script>
+
+    <script src="main.js"></script>
+    <script src="swiper.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 </body>
 
 </html>

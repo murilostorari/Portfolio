@@ -58,7 +58,8 @@ svg:not(:root) {
 }
 
 button,
-input {
+input,
+textarea {
     color: inherit;
     font: inherit;
     margin: 0
@@ -296,7 +297,6 @@ button {
 }
 
 label {
-    margin-bottom: 5px;
     font-weight: 700;
     display: block
 }
@@ -620,10 +620,6 @@ a:hover {
     position: relative
 }
 
-.button.is-secondary {
-    background-color: #23232300
-}
-
 .button.is-secondary .button_text {
     font-weight: 600;
     font-size: 16px;
@@ -653,6 +649,32 @@ a:hover {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
     display: grid;
+}
+
+.swiper {
+    width: 100%;
+    height: 520px;
+    position: relative;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.swiper-pagination-bullet {
+    border: 1px solid var(--colours--stroke-colour) !important;
+    background-color: var(--colours--stroke-colour) !important;
+    opacity: 1 !important;
+    transition: background-color 0.3s !important;
+}
+
+.swiper-pagination-bullet-active {
+    border-color: rgba(0, 140, 255, 0.5) !important;
+    background-color: rgba(0, 140, 255, 0.5) !important;
 }
 
 .project-card {
@@ -951,7 +973,7 @@ a:hover {
     padding: .25rem .3rem;
     font-size: var(--typography--label);
     font-weight: 600;
-    color: var(--default-theme--text-colour);
+    color: #fff;
     background-color: var(--colours--grey-dark);
     border: 1px solid var(--colours--stroke-colour);
     border-radius: var(--misc-styles--border-radius);
@@ -959,6 +981,42 @@ a:hover {
     margin: 0;
     z-index: 2;
 }
+
+.card-label-html {
+    border-color: rgba(255, 87, 34, 0.5);
+    background-color: rgba(255, 87, 34, 0.5);
+}
+
+.card-label-css {
+    border-color: rgba(33, 150, 243, 0.5);
+    background-color: rgba(33, 150, 243, 0.5);
+}
+
+.card-label-js {
+    border-color: rgba(255, 223, 0, 0.5);
+    background-color: rgba(255, 223, 0, 0.5);
+}
+
+.card-label-firebase {
+    border-color: rgba(245, 130, 32, 0.5);
+    background-color: rgba(245, 130, 32, 0.5);
+}
+
+.card-label-csharp {
+    border-color: rgba(81, 43, 212, 0.5);
+    background-color: rgba(81, 43, 212, 0.5);
+}
+
+.card-label-access {
+    border-color: rgba(163, 53, 56, 0.5);
+    background-color: rgba(163, 53, 56, 0.5);
+}
+
+.card-label-wforms {
+    border-color: rgba(167, 192, 220, 0.5);
+    background-color: rgba(167, 192, 220, 0.5);
+}
+
 
 .form_success {
     border-radius: var(--misc-styles--border-radius);
@@ -1194,15 +1252,7 @@ a:hover {
     }
 }
 
-/* Botões de Categoria */
-.category-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3.5rem;
-}
-
-.category-button {
+.icon-button {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     font-weight: 600;
@@ -1214,8 +1264,35 @@ a:hover {
     transition: background-color 0.3s;
 }
 
-.category-button.active,
-.category-button:hover {
+/* Botões de Categoria */
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+}
+
+.category-button,
+.icon-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--default-theme--text-colour);
+    background-color: var(--colours--hover-dark);
+    border: 1px solid var(--colours--stroke-colour);
+    border-radius: var(--misc-styles--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.category-button.active {
+    color: #fff;
+    border-color: rgba(0, 140, 255, 0.5);
+    background-color: rgba(0, 140, 255, 0.5);
+}
+
+.category-button:not(.active):hover {
+    border-color: #353535;
     background-color: var(--colours--grey-dark);
 }
 
@@ -1249,14 +1326,18 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    /* Espaço entre os campos do formulário */
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    /* Espaço entre o label e o input */
+    flex: 1;
 }
 
 label {
@@ -1278,20 +1359,24 @@ input::placeholder,
 textarea::placeholder {
     color: var(--colours--text-colour);
     opacity: 0.6;
-    /* Para dar uma aparência mais sutil ao placeholder */
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
 }
 
 .submit-button {
-    background-color: var(--colours--primary);
-    border: none;
-    border-radius: var(--misc-styles--border-radius-mobile);
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
     color: #fff;
-    padding: 0.75rem 1rem;
-    font-size: var(--typography--button);
+    border: 1px solid rgba(0, 140, 255, 0.5);
+    background-color: rgba(0, 140, 255, 0.5);
+    border-radius: var(--misc-styles--border-radius);
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.submit-button:hover {
-    background-color: var(--colours--primary-dark);
+    transition: background-color 0.3s;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
