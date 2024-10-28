@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -426,7 +428,7 @@ label {
 
 :root {
     --default-theme--background-colour: var(--colours--black);
-    --typography--primary-font: Interdisplay, sans-serif;
+    --typography--primary-font: Inter, sans-serif;
     --default-theme--text-colour: var(--colours--grey-light);
     --typography--body-regular: 1rem;
     --default-theme--heading-colour: var(--colours--white);
@@ -567,6 +569,10 @@ a:hover {
     grid-row-gap: .25rem
 }
 
+.vertical-flex.is-small div {
+    font-weight: 500;
+}
+
 .vertical-flex.is-heading div {
     font-size: 18px;
 }
@@ -598,7 +604,7 @@ a:hover {
     background-color: var(--colours--grey-dark);
     justify-content: center;
     align-items: center;
-    padding: .3rem .5rem;
+    padding: .5rem .7rem;
     transition: opacity .4s;
     display: inline-flex
 }
@@ -616,6 +622,11 @@ a:hover {
 
 .button.is-secondary {
     background-color: #23232300
+}
+
+.button.is-secondary .button_text {
+    font-weight: 600;
+    font-size: 16px;
 }
 
 .button.is-form {
@@ -637,29 +648,61 @@ a:hover {
 
 .projects-layout {
     grid-column-gap: 1.25rem;
-    grid-row-gap: 0;
-    grid-template-rows: auto minmax(auto, 1fr) minmax(auto, 1fr);
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-columns: 1fr;
+    grid-row-gap: 1.25rem;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
-    display: grid
+    display: grid;
 }
 
 .project-card {
-    grid-template-columns: 1fr;
-    grid-auto-columns: 1fr;
-    grid-template-rows: subgrid;
     width: 100%;
-    display: grid
+    /* Largura total do cartão */
+    display: grid;
+    /* Mantém o layout em grid para os elementos dentro do cartão */
+    border: 1px solid var(--colours--stroke-colour);
+    /* Borda sutil */
+    border-radius: 8px;
+    /* Bordas arredondadas */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra para profundidade */
 }
 
 .project-card_image-wrap {
-    aspect-ratio: 1;
+    aspect-ratio: 16 / 9;
+    /* Defina a proporção para retangular (ex: 16:9) */
     width: 100%;
-    margin-bottom: 1rem;
+    /* Largura total */
+    margin-bottom: 0.5rem;
+    /* Espaçamento inferior */
     position: relative;
-    overflow: hidden
+    /* Para permitir o posicionamento absoluto de elementos filhos */
+    overflow: hidden;
+    /* Para esconder partes da imagem que saem do cartão */
 }
+
+.project-card_image-wrap img {
+    width: 100%;
+    /* A imagem ocupa toda a largura do cartão */
+    height: 100%;
+    /* A altura da imagem será ajustada à proporção definida */
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+    /* Cobre a área do cartão */
+}
+
+.project-card_title {
+    margin-left: 1rem;
+    margin-bottom: 0.5rem !important;
+}
+
+.project-card_description {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 0.75rem;
+}
+
+/* Adicione outras regras de estilo conforme necessário */
 
 .img-cover {
     object-fit: cover;
@@ -846,15 +889,75 @@ a:hover {
     display: flex
 }
 
-.project-card_date {
-    z-index: 5;
-    border: 1px solid var(--colours--stroke-colour);
-    border-radius: var(--misc-styles--border-radius-mobile);
-    background-color: var(--colours--grey-dark);
-    font-size: var(--typography--label);
+.link-buttons {
+    display: flex;
+    justify-content: right;
+    gap: 0.5rem;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 0;
+}
+
+.link-label {
+    display: flex;
+    align-items: center;
+    /* Alinha verticalmente o ícone com o texto */
+    gap: 0.5rem;
+    /* Espaço entre o ícone e o texto */
     padding: .25rem .3rem;
-    position: absolute;
-    inset: .75rem auto auto .75rem
+    font-size: var(--typography--label);
+    font-weight: 600;
+    color: var(--default-theme--text-colour);
+    background-color: var(--colours--hover-dark);
+    border: 1px solid var(--colours--stroke-colour);
+    border-radius: var(--misc-styles--border-radius);
+    z-index: 2;
+}
+
+.link-label .active,
+.link-label :hover {
+    background-color: var(--colours--grey-dark);
+}
+
+.button_icon {
+    display: flex;
+    align-items: center;
+}
+
+.project-card_header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.project-card_title {
+    margin: 0;
+}
+
+.project-card_title h4 {
+    margin: 0;
+}
+
+.card-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0;
+}
+
+.card-label {
+    padding: .25rem .3rem;
+    font-size: var(--typography--label);
+    font-weight: 600;
+    color: var(--default-theme--text-colour);
+    background-color: var(--colours--grey-dark);
+    border: 1px solid var(--colours--stroke-colour);
+    border-radius: var(--misc-styles--border-radius);
+    transition: background-color 0.3s;
+    margin: 0;
+    z-index: 2;
 }
 
 .form_success {
@@ -1091,18 +1194,104 @@ a:hover {
     }
 }
 
-@font-face {
-    font-family: Interdisplay;
-    src: url(https://cdn.prod.website-files.com/66fbe669fd0adccab7acf3f7/66fbe7c0fa5ace8be98b4a79_InterDisplay-Regular.woff2) format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap
+/* Botões de Categoria */
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
 }
 
-@font-face {
-    font-family: Interdisplay;
-    src: url(https://cdn.prod.website-files.com/66fbe669fd0adccab7acf3f7/66fbe7c0c49c789defb827a4_InterDisplay-SemiBold.woff2) format('woff2');
+.category-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
     font-weight: 600;
-    font-style: normal;
-    font-display: swap
+    color: var(--default-theme--text-colour);
+    background-color: var(--colours--hover-dark);
+    border: 1px solid var(--colours--stroke-colour);
+    border-radius: var(--misc-styles--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.category-button.active,
+.category-button:hover {
+    background-color: var(--colours--grey-dark);
+}
+
+/* Grid de Skills */
+.w-layout-grid.is-tools {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.75rem;
+}
+
+/* Responsivo para Telas Menores */
+@media (max-width: 1024px) {
+    .w-layout-grid.is-tools {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .w-layout-grid.is-tools {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .w-layout-grid.is-tools {
+        grid-template-columns: 1fr;
+    }
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* Espaço entre os campos do formulário */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* Espaço entre o label e o input */
+}
+
+label {
+    font-size: var(--typography--label);
+    color: var(--colours--text-colour);
+}
+
+input,
+textarea {
+    border: 1px solid var(--colours--stroke-colour);
+    border-radius: var(--misc-styles--border-radius-mobile);
+    background-color: var(--colours--grey-dark);
+    color: var(--colours--text-colour);
+    padding: 0.5rem;
+    font-size: var(--typography--input);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--colours--text-colour);
+    opacity: 0.6;
+    /* Para dar uma aparência mais sutil ao placeholder */
+}
+
+.submit-button {
+    background-color: var(--colours--primary);
+    border: none;
+    border-radius: var(--misc-styles--border-radius-mobile);
+    color: #fff;
+    padding: 0.75rem 1rem;
+    font-size: var(--typography--button);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: var(--colours--primary-dark);
 }
