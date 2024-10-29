@@ -28,7 +28,8 @@ template {
 }
 
 a {
-    background-color: #0000
+    background-color: #0000;
+    transition: background-color 0.3s;
 }
 
 a:active,
@@ -297,6 +298,7 @@ button {
 }
 
 label {
+    margin-bottom: 5px;
     font-weight: 700;
     display: block
 }
@@ -434,10 +436,10 @@ label {
     --default-theme--heading-colour: var(--colours--white);
     --colours--white: #f6f6f6;
     --misc-styles--border-radius: 6px;
-    --colours--grey-dark: #232323;
+    --colours--grey-dark: #202020;
     --typography--body-large: 1.25rem;
     --typography--body-large-mobile: 1.125rem;
-    --colours--stroke-colour: #353535;
+    --colours--stroke-colour: #232323;
     --misc-styles--border-radius-mobile: .375rem;
     --typography--label: .75rem;
     --colours--hover-dark: #161616;
@@ -526,9 +528,7 @@ a {
     transition: opacity .4s
 }
 
-a:hover {
-    opacity: .75
-}
+a:hover {}
 
 .container {
     max-width: 80rem;
@@ -597,20 +597,24 @@ a:hover {
 }
 
 .button {
-    grid-column-gap: .5rem;
-    grid-row-gap: .5rem;
+    font-size: 16px;
+    font-weight: 600;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
     border: 1px solid var(--colours--stroke-colour);
     border-radius: var(--misc-styles--border-radius);
-    background-color: var(--colours--grey-dark);
+    background-color: var(--colours--hover-dark);
     justify-content: center;
     align-items: center;
-    padding: .5rem .7rem;
-    transition: opacity .4s;
-    display: inline-flex
+    padding: 0.5rem 0.75rem;
+    display: inline-flex;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .button:hover {
-    opacity: .75
+    border-color: #232323;
+    background-color: var(--colours--grey-dark) !important;
 }
 
 .button.is-theme-toggle {
@@ -618,6 +622,10 @@ a:hover {
     width: 2.75rem;
     height: 2.75rem;
     position: relative
+}
+
+.button.is-secondary {
+    background-color: var(--colours--hover-dark);
 }
 
 .button.is-secondary .button_text {
@@ -642,52 +650,157 @@ a:hover {
     grid-row-gap: 1.75rem
 }
 
-.projects-layout {
-    grid-column-gap: 1.25rem;
-    grid-row-gap: 1.25rem;
-    grid-template-rows: auto;
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    display: grid;
-}
-
-.swiper {
-    width: 100%;
-    height: 520px;
-    position: relative;
-}
-
-.swiper-slide {
+.section-heading {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 2rem;
 }
 
-.swiper-pagination-bullet {
-    border: 1px solid var(--colours--stroke-colour) !important;
-    background-color: var(--colours--stroke-colour) !important;
-    opacity: 1 !important;
-    transition: background-color 0.3s !important;
+.vertical-flex.is-heading {
+    display: flex;
+    flex-direction: column;
 }
 
-.swiper-pagination-bullet-active {
-    border-color: rgba(0, 140, 255, 0.5) !important;
-    background-color: rgba(0, 140, 255, 0.5) !important;
+.carousel-navigation {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Layout dos projetos */
+.projects-layout {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    cursor: grab;
+    user-select: none;
+    transition: transform 0.3s ease-out;
 }
 
 .project-card {
-    width: 100%;
-    /* Largura total do cartão */
-    display: grid;
-    /* Mantém o layout em grid para os elementos dentro do cartão */
+    flex: 0 0 calc(50% - 0.625rem);
+    margin-right: 1.25rem;
     border: 1px solid var(--colours--stroke-colour);
-    /* Borda sutil */
     border-radius: 8px;
-    /* Bordas arredondadas */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    /* Sombra para profundidade */
+}
+
+.project-card:nth-child(2n) {
+    margin-right: 0;
+}
+
+/* Imagem do projeto */
+.project-card_image-wrap {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card_image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+/* Carrossel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+}
+
+/* Botões de navegação */
+.carousel-button {
+    position: static;
+    transform: none;
+    width: 40px;
+    height: 40px;
+    background-color: var(--colours--hover-dark);
+    border: 1px solid var(--colours--stroke-colour);
+    border-radius: var(--misc-styles--border-radius);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.carousel-button:hover {
+    border-color: #232323;
+    background-color: var(--colours--grey-dark);
+}
+
+.carousel-button.prev,
+.carousel-button.next {
+    left: auto;
+    right: auto;
+}
+
+/* Dots do carrossel */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 2rem;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid #232323;
+    background: #232323;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    border-color: rgba(33, 150, 243, 0.5);
+    background-color: rgba(33, 150, 243, 0.5);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+
+    /* Mantém o layout do cabeçalho como na versão desktop */
+    .section-heading {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* Ajusta os cards para mostrar apenas um por vez */
+    .project-card {
+        flex: 0 0 100%;
+        margin-right: 0;
+    }
+
+    /* Ajusta o layout para um card por vez */
+    .projects-layout {
+        gap: 0;
+    }
+
+    /* Ajusta a navegação do carrossel para telas menores */
+    .carousel-navigation {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    /* Garante que os botões fiquem alinhados à direita */
+    .carousel-button {
+        width: 36px;
+        height: 36px;
+    }
 }
 
 .project-card_image-wrap {
@@ -711,6 +824,60 @@ a:hover {
     object-fit: cover;
     border-radius: 8px 8px 0 0;
     /* Cobre a área do cartão */
+}
+
+.card-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0;
+}
+
+.card-label {
+    padding: .25rem .3rem;
+    font-size: var(--typography--label);
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--colours--grey-dark);
+    border: 1px solid var(--colours--stroke-colour);
+    border-radius: var(--misc-styles--border-radius);
+    transition: background-color 0.3s;
+    margin: 0;
+    z-index: 2;
+}
+
+.card-label-html {
+    border-color: rgba(255, 87, 34, 0.5);
+    background-color: rgba(255, 87, 34, 0.5);
+}
+
+.card-label-css {
+    border-color: rgba(33, 150, 243, 0.5);
+    background-color: rgba(33, 150, 243, 0.5);
+}
+
+.card-label-js {
+    border-color: rgba(255, 223, 0, 0.5);
+    background-color: rgba(255, 223, 0, 0.5);
+}
+
+.card-label-firebase {
+    border-color: rgba(245, 130, 32, 0.5);
+    background-color: rgba(245, 130, 32, 0.5);
+}
+
+.card-label-csharp {
+    border-color: rgba(81, 43, 212, 0.5);
+    background-color: rgba(81, 43, 212, 0.5);
+}
+
+.card-label-access {
+    border-color: rgba(163, 53, 56, 0.5);
+    background-color: rgba(163, 53, 56, 0.5);
+}
+
+.card-label-wforms {
+    border-color: rgba(167, 192, 220, 0.5);
+    background-color: rgba(167, 192, 220, 0.5);
 }
 
 .project-card_title {
@@ -741,10 +908,6 @@ a:hover {
 .project-card_description {
     color: var(--default-theme--text-colour);
     font-weight: 400
-}
-
-.section-heading {
-    margin-bottom: 2rem
 }
 
 .section-divider {
@@ -962,61 +1125,6 @@ a:hover {
 .project-card_title h4 {
     margin: 0;
 }
-
-.card-buttons {
-    display: flex;
-    gap: 0.5rem;
-    margin-bottom: 0;
-}
-
-.card-label {
-    padding: .25rem .3rem;
-    font-size: var(--typography--label);
-    font-weight: 600;
-    color: #fff;
-    background-color: var(--colours--grey-dark);
-    border: 1px solid var(--colours--stroke-colour);
-    border-radius: var(--misc-styles--border-radius);
-    transition: background-color 0.3s;
-    margin: 0;
-    z-index: 2;
-}
-
-.card-label-html {
-    border-color: rgba(255, 87, 34, 0.5);
-    background-color: rgba(255, 87, 34, 0.5);
-}
-
-.card-label-css {
-    border-color: rgba(33, 150, 243, 0.5);
-    background-color: rgba(33, 150, 243, 0.5);
-}
-
-.card-label-js {
-    border-color: rgba(255, 223, 0, 0.5);
-    background-color: rgba(255, 223, 0, 0.5);
-}
-
-.card-label-firebase {
-    border-color: rgba(245, 130, 32, 0.5);
-    background-color: rgba(245, 130, 32, 0.5);
-}
-
-.card-label-csharp {
-    border-color: rgba(81, 43, 212, 0.5);
-    background-color: rgba(81, 43, 212, 0.5);
-}
-
-.card-label-access {
-    border-color: rgba(163, 53, 56, 0.5);
-    background-color: rgba(163, 53, 56, 0.5);
-}
-
-.card-label-wforms {
-    border-color: rgba(167, 192, 220, 0.5);
-    background-color: rgba(167, 192, 220, 0.5);
-}
-
 
 .form_success {
     border-radius: var(--misc-styles--border-radius);
@@ -1252,18 +1360,6 @@ a:hover {
     }
 }
 
-.icon-button {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--default-theme--text-colour);
-    background-color: var(--colours--hover-dark);
-    border: 1px solid var(--colours--stroke-colour);
-    border-radius: var(--misc-styles--border-radius);
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
 /* Botões de Categoria */
 .category-buttons {
     display: flex;
@@ -1272,8 +1368,7 @@ a:hover {
     margin-bottom: 3.5rem;
 }
 
-.category-button,
-.icon-button {
+.category-button {
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     font-weight: 600;
@@ -1287,12 +1382,13 @@ a:hover {
 
 .category-button.active {
     color: #fff;
-    border-color: rgba(0, 140, 255, 0.5);
-    background-color: rgba(0, 140, 255, 0.5);
+    border-color: rgba(33, 150, 243, 0.5);
+    background-color: rgba(33, 150, 243, 0.5);
 }
 
+/* Hover aplicado apenas quando o botão não está ativo */
 .category-button:not(.active):hover {
-    border-color: #353535;
+    border-color: #232323;
     background-color: var(--colours--grey-dark);
 }
 
